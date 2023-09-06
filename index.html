@@ -17,15 +17,19 @@
     </style>
 </head>
 <body>
-    <form id="factoryForm" onsubmit="">
-        <input type="text" id="fNameInp">
-        <input type="text" id="lNameInp">
-        <input type="text" id="birthDateInp">
-        <input type="email" name="" id="emailInp">
-        <input type="tel" pattern="[0-9]{10}" id="userTelInp">
-        <input type="text" id="occupation">
-        <button id="factoryBtn">submit</button>
-
+    <form id="factoryForm" onsubmit="return false">
+        <label for="" id="fNameLabel"></label>
+        <input type="text" id="fNameInp" placeholder="First name">
+        <label for="" id="lNameLabel"></label>
+        <input type="text" id="lNameInp" placeholder="Last name">
+        <label for="" id="birthDateLabel">Enter Birth Date</label>
+        <input type="date" id="birthDateInp" >
+        <label for="" id="emailLabel"></label>
+        <input type="email" id="emailInp" placeholder="Email">
+        <label for="" id="userTelLabel"></label>
+        <input type="tel" pattern="[0-9]{10}" id="userTelInp"  placeholder="Telephone">
+        <input type="text" id="occupationInp">
+        <button type="submit" onclick="console.log(new Date(birthDateInp.value))" id="factoryBtn">submit</button>
     </form>
     
     <script src="main.js"></script>
