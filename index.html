@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            display: flex;
+            flex-direction: column;
+            width: 80vw;
+            margin:auto;
+        }
+        label{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form id="factoryForm" onsubmit="">
+        <input type="text" id="fNameInp">
+        <input type="text" id="lNameInp">
+        <input type="text" id="birthDateInp">
+        <input type="email" name="" id="emailInp">
+        <input type="tel" pattern="[0-9]{10}" id="userTelInp">
+        <input type="text" id="occupation">
+        <button id="factoryBtn">submit</button>
+
+    </form>
+    
+    <script src="main.js"></script>
+    
+</body>
+</html>
