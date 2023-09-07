@@ -10,7 +10,7 @@ function factoryValid(){
     return true
 }
 function clearLabelRemoveBord(lblEl,inpEl){
-    lblEl.innerHTML=""
+    lblEl.innerText=""
     lblEl.style.color=""
     inpEl.style.border=""
 }
@@ -26,17 +26,16 @@ function validFirstName(){
         clearLabelRemoveBord(fNameLabel,fNameInp)
         return true
     }
-    fNameLabel.innerHTML="*need to start with upper case"
+    fNameLabel.innerText ="*need to start with upper case"
     changeInputWrong(fNameLabel,fNameInp)
     return false
 }
 function validLastName(){
     if( lNameInp.value.length>0 && lNameInp.value.length<=20){
         clearLabelRemoveBord(lNameLabel,lNameInp)
-        lNameInp.style.border=""
         return true
     }
-    lNameLabel.innerHTML="*need to be between 1-20"
+    lNameLabel.innerText="*need to be between 1-20"
     changeInputWrong(lNameLabel,lNameInp)
     return false
 
@@ -60,7 +59,7 @@ function validAge(){
         clearLabelRemoveBord(birthDateLabel,birthDateInp)
         return true;
     }
-    birthDateLabel.innerHTML="*age not between 16 and 65"
+    birthDateLabel.innerText="*age not between 16 and 65"
     changeInputWrong(birthDateLabel,birthDateInp)
     return false;
 }
@@ -70,7 +69,7 @@ function validEmail(){
         clearLabelRemoveBord(emailLabel,emailInp)
         return true;
     }
-    emailLabel.innerHTML="*age not between 16 and 65"
+    emailLabel.innerText="*age not between 16 and 65"
     changeInputWrong(emailLabel,emailInp)
     return false;
 }
@@ -82,7 +81,11 @@ function validTelephone(){
         clearLabelRemoveBord(userTelLabel,userTelInp)
         return true;
     }
-    userTelLabel.innerHTML="*not a phone number(10 digits, starts with 0)"
+    userTelLabel.innerText="*not a phone number(10 digits, starts with 0)"
     changeInputWrong(userTelLabel,userTelInp)
     return false;
+}
+
+function printClockTime(date1){
+    mainDiv.innerHTML=  getClockTime(date1)
 }
