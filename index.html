@@ -11,25 +11,23 @@
             width: 80vw;
             margin:auto;
         }
-        label{
-            color: red;
-        }
     </style>
 </head>
 <body>
-    <form id="factoryForm" onsubmit="return false">
-        <label for="" id="fNameLabel"></label>
+    <form id="factoryForm" onsubmit="return factoryValid()">
+        <label for="" id="fNameLabel">First Name:</label>
         <input type="text" id="fNameInp" placeholder="First name">
-        <label for="" id="lNameLabel"></label>
+        <label for="" id="lNameLabel">Last Name:</label>
         <input type="text" id="lNameInp" placeholder="Last name">
-        <label for="" id="birthDateLabel">Enter Birth Date</label>
+        <label for="" id="birthDateLabel">Birth Date:</label>
         <input type="date" id="birthDateInp" >
-        <label for="" id="emailLabel"></label>
+        <label for="" id="emailLabel" >Email:</label>
         <input type="email" id="emailInp" placeholder="Email">
-        <label for="" id="userTelLabel"></label>
-        <input type="tel" pattern="[0-9]{10}" id="userTelInp"  placeholder="Telephone">
+        <label for="" id="userTelLabel">Telephone</label>
+        <input type="number" id="userTelInp"  placeholder="Telephone">
+        <label for="">Occupation:</label>
         <input type="text" id="occupationInp">
-        <button type="submit" onclick="console.log(new Date(birthDateInp.value))" id="factoryBtn">submit</button>
+        <button type="submit" id="factoryBtn">submit</button>
     </form>
     
     <script src="main.js"></script>

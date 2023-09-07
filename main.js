@@ -1,13 +1,45 @@
 function factoryValid(){
-    
+    var validArr= [validFirstName(),validLastName(),validAge(),validEmail(),validTelephone()]
+    for (let i = 0; i < validArr.length; i++) {
+        if(!validArr[i])
+        {
+            return false
+        }
+        
+    }
+    return true
 }
+function clearLabelRemoveBord(lblEl,inpEl){
+    lblEl.innerHTML=""
+    lblEl.style.color=""
+    inpEl.style.border=""
+}
+function changeInputWrong(lblEl,inpEl){
+    lblEl.style.color="red"
+    inpEl.style.border="1px solid red"
+}
+
   
 
 function validFirstName(){
-    return fNameInp.value[0]!=fNameInp.value[0].toLowerCase()
+    if(fNameInp.value[0]!=fNameInp.value[0].toLowerCase()){
+        clearLabelRemoveBord(fNameLabel,fNameInp)
+        return true
+    }
+    fNameLabel.innerHTML="*need to start with upper case"
+    changeInputWrong(fNameLabel,fNameInp)
+    return false
 }
 function validLastName(){
-    return lNameInp.value.length>0 && lNameInp.value.length<=20;
+    if( lNameInp.value.length>0 && lNameInp.value.length<=20){
+        clearLabelRemoveBord(lNameLabel,lNameInp)
+        lNameInp.style.border=""
+        return true
+    }
+    lNameLabel.innerHTML="*need to be between 1-20"
+    changeInputWrong(lNameLabel,lNameInp)
+    return false
+
 }
 function getAgeFromBirthDate(date1){
     var currDate= new Date()
@@ -25,36 +57,32 @@ function getAgeFromBirthDate(date1){
 function validAge(){
     var userAge= getAgeFromBirthDate(new Date(birthDateInp.value))
     if (userAge>16&&userAge<65){
-        birthDateLabel.innerHTML=""
-        birthDateInp.style.border=""
+        clearLabelRemoveBord(birthDateLabel,birthDateInp)
         return true;
     }
     birthDateLabel.innerHTML="*age not between 16 and 65"
-    birthDateInp.style.border="1px solid red"
+    changeInputWrong(birthDateLabel,birthDateInp)
     return false;
 }
 function validEmail(){
     if( emailInp.value.substr(-4)==".com" || emailInp.value.substr(-6)==".co.il")
     {
-        emailLabel.innerHTML=""
-        emailInp.style.border=""
+        clearLabelRemoveBord(emailLabel,emailInp)
         return true;
     }
     emailLabel.innerHTML="*age not between 16 and 65"
-    emailInp.style.border=""
+    changeInputWrong(emailLabel,emailInp)
     return false;
 }
 
 function validTelephone(){
-
-    var isTelNumber= +userTelInp && userTelInp.value.indexOf('e')==-1;
-    if( userTelInp.value[0]==0 && isTelNumber)
+    var isANumber= +(userTelInp.value) && userTelInp.value.indexOf('e')==-1;
+    if( userTelInp.value[0]==0 && isANumber&& userTelInp.value.length==10)
     {
-        emailLabel.innerHTML=""
-        emailInp.style.border=""
+        clearLabelRemoveBord(userTelLabel,userTelInp)
         return true;
     }
-    emailLabel.innerHTML="*age not between 16 and 65"
-    emailInp.style.border=""
+    userTelLabel.innerHTML="*not a phone number(10 digits, starts with 0)"
+    changeInputWrong(userTelLabel,userTelInp)
     return false;
 }
