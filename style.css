@@ -1,0 +1,40 @@
+form{
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    margin:auto;
+    text-align: center;
+}
+
+#mainTitle{
+    display: flex;
+    color: #e36600;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+#coolDownCount{
+    text-align: center;
+    color: #ff7300;
+}
+
+input{
+    background-color: #dcaa4e;
+    color: #156025;
+}
+
+button,label{
+    background-color: #6f6f6f ;
+    color:#ffd700
+}
+body{
+    background-color: #474751;
+}
+#clockDiv{
+    text-align: right;
+    color: #ff7300;
+}
+*:disabled{
+   filter: brightness(0.5);
+}

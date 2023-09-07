@@ -4,21 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        form{
-            display: flex;
-            flex-direction: column;
-            width: 80vw;
-            margin:auto;
-        }
-        #clock div{
-            
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
-<div id="clockDiv"></div>
+<header id="mainTitle"></header>
 <body>
     <form id="factoryForm" onsubmit="return factoryValid()">
+        <div id="coolDownCount"></div>
         <label for="" id="fNameLabel">First Name:</label>
         <input type="text" id="fNameInp" placeholder="First name">
         <label for="" id="lNameLabel">Last Name:</label>
@@ -27,7 +18,7 @@
         <input type="date" id="birthDateInp" >
         <label for="" id="emailLabel" >Email:</label>
         <input type="email" id="emailInp" placeholder="Email">
-        <label for="" id="userTelLabel">Telephone</label>
+        <label for="" id="userTelLabel">Telephone:</label>
         <input type="number" id="userTelInp"  placeholder="Telephone">
         <label for="">Occupation:</label>
         <input type="text" id="occupationInp">
